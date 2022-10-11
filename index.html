@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+          <a href="#home" class="w3-bar-item w3-button">HOME</a>
+          <a href="#events" class="w3-bar-item w3-button">EVENTS</a>
+          <a href="#bookinghistory" class="w3-bar-item w3-button">BOOKING HISTORY</a>
+          <a href="#create" class="w3-bar-item w3-button">CREATE EVENT</a>
+          <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+        </div>
+      </div>
+
+    <!-- Home Page -->
+<section id="home">
+    <img class="mySlides" src="music1.jpg" style="width:100%">
+    <img class="mySlides" src="music4.jpg" style="width:100%">
+    <img class="mySlides" src="music3.jpg" style="width:100%">
+    <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-black w3-center">
+        <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">FESTIVALS OF MUSIC</h1>
+        <h5 class="w3-hide-large" style="black:nowrap">FESTIVALS OF MUSIC</h5>
+        <h3 class="w3-hide-medium w3-hide-small">MUSIC EVENTS</h3>
+  </section> 
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">WHAT WE DO?</h2>
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    <p class="w3-justify"></p>
+    <h2 class="w3-wide">The goal of Festival of Music is to guarantee that attendees at music festivals around Australia and the world have a fantastic and memorable experience.</h2>
+    <h2 class="w3-wide">.</h2>
+    <h2 class="w3-wide">RECOMMENDED EVENTS:</h2>
+  </section>
+
+  <section class="w3-row-padding w3-center w3-light-grey">
+    <article class="w3-third">
+        <a href="https://caloundramusicfestival.com/" target="_blank">Caloundra Music Festival</a>
+      <img src="Concert1.jpg" alt="Random Name" style="width:100%">
+      <p>The 15th annual Caloundra Music Festival, presented by Sunshine Coast Council, will take place on the weekend of September 30 through October 2, 2022. The best of the Australian music scene will be represented in a wide lineup of entertainment for the lovely Kings Beach and its surroundings.</p>
+    </article>
+    <article class="w3-third">
+      <a href="https://www.thefamouspeople.com/profiles/billie-eilish-42253.php" target="_blank">Billie Eilish Concert</a>
+      <img src="Concert2.jpg" alt="Random Name" style="width:100%">
+      <p>In September 2022, the biggest stadium tour Billie Eilish has ever done will take her to Australia and New Zealand.</p>
+    </article>
+    <article class="w3-third">
+        <a href="https://www.listenout.com.au/" target="_blank">Listen Out Brisbane</a>
+      <img src="Concert3.jpg" alt="Random Name" style="width:100%">
+      <p>The main national dance music festival in Australia, called Listen Out, makes stops in Brisbane, Melbourne, Perth, and Sydney as it makes its way across the country.</p>
+    </article>
+  </section>
+
+  <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <p class="w3-medium">
+    Powered by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Festivals of Music</a>
+    </p>
+    </footer>
+
+  <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 3000);
+    }
+    </script>
+
+<!-- Events Page -->
+<section class="w3-container w3-center w3-content" style="max-width:600px" id ="events">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    <h2 class="w3-wide">THE EVENTS</h2>
+  </section>
+
+<section class="w3-row-padding w3-center w3-light-grey">
+<article class="w3-third">
+    <a href="https://caloundramusicfestival.com/" target="_blank">Caloundra Music Festival</a>
+    <img src="Concert1.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 30th September, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+  <a href="https://www.thefamouspeople.com/profiles/billie-eilish-42253.php" target="_blank">Billie Eilish Concert</a>
+  <img src="Concert2.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 17th September, 2022</p>
+  <p>Booking Status: Sold Out</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+    <a href="https://www.listenout.com.au/" target="_blank">Listen Out Brisbane</a>
+  <img src="Concert3.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 2nd October, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+<p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+</section>
+
+<section class="w3-row-padding w3-center w3-light-grey">
+<article class="w3-third">
+    <a href="https://www.thescriptmusic.com/" target="_blank">The Script</a>
+  <img src="Concert4.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 17th September, 2022</p>
+  <p>Booking Status: Sold Out</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+  <a href="https://www.bradpaisley.com/" target="_blank">Brad Paisley Concert</a>
+  <img src="Concert5.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 5th October,2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+    <a href="https://www.goodthingsfestival.com.au/" target="_blank">Good Things Festival</a>
+  <img src="Concert6.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 2nd December, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+<p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+</section>
+
+<section class="w3-row-padding w3-center w3-light-grey">
+<article class="w3-third">
+    <a href="https://arcticmonkeys.com/" target="_blank">Arctic Monkey's Concert</a>
+  <img src="Concert7.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 6th January, 2023</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+  <a href="https://www.kanebrownmusic.com/" target="_blank">Kane Brown Concert</a>
+  <img src="Concert8.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 17th September, 2022</p>
+  <p>Booking Status: Sold Out</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+    <a href="https://www.qmf.net.au/" target="_blank">Queenscliff Music Festival</a>
+  <img src="Concert9.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 25th November, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+<p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+</section>
+
+<section class="w3-row-padding w3-center w3-light-grey">
+<article class="w3-third">
+    <a href="https://5sos.com/" target="_blank">5 Seconds Of Summer Concert</a>
+  <img src="Concert10.jpeg" alt="Random Name" style="width:100%">
+  <p>Date: 9th December, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+  <a href="https://thekooks.com/" target="_blank">The Kooks Concert</a>
+  <img src="Concert11.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 6th October, 2022</p>
+  <p>Booking Status: Available</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+<article class="w3-third">
+    <a href="https://www.youtube.com/channel/UC0ifXd2AVf1LMYbqwB5GH4g" target="_blank">Polo G Concert</a>
+  <img src="Concert12.jpg" alt="Random Name" style="width:100%">
+  <p>Date: 28th September, 2022</p>
+  <p>Booking Status: Sold Out</p>
+  <a href="#bookinghistory" class="w3-button w3-bar-item w3-black">Book Now</a>
+</article>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+<p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+</section>
+
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+<p class="w3-medium">
+Powered by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Festivals of Music</a>
+</p>
+</footer>
+
+<!-- Create Event Page -->
+<section class="w3-container w3-center w3-content" style="max-width:600px" id ="create">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+  </section>
+
+<div class="w3-container w3-padding-64 w3-black w3-black-min w3-xlarge">
+<img class="mySlides" src="music1.jpg" style="width:100%">
+<div class="w3-content">
+  <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Create Event</h1>
+  <p>For help call us at 0432432234</p>
+  <p><span class="w3-tag">FYI</span> Making a fake event will result in a fine</p>
+  <p class="w3-xxlarge"><strong>Please</strong> provide name, image link, date, and any other relevant details:</p>
+  <form action="/action_page.php" target="_blank">
+    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Image Link" required name="People"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Relevant detials" required name="Message"></p>
+    <p><button class="w3-button w3-light-grey w3-block" type="submit">SUBMIT EVENT</button></p>
+  </form>
+</div>
+</div>
+
+<section id="app">
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="comment">
+    <p v-for="items in item" v-text="items"></p>
+      </div>
+      </div>
+      </div>
+  <div class="row">
+    <div class="col-6 center" style="justify-content: center;">
+  <input type="text" class="input" placeholder="Write a comment" v-model="newItem" @keyup.enter="addItem()"></input>
+      <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+<p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+</section>
+
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <p class="w3-medium">
+    Powered by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Festivals of Music</a>
+    </p>
+    </footer>
+
+<!-- Booking History Page -->
+
+<section class="w3-container w3-center w3-content" style="max-width:600px" id ="bookinghistory">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    <h2 class="w3-wide">BOOKING HISTORY</h2>
+  </section>
+
+<section class="w3-row-padding w3-center w3-light-grey">
+<article class="w3-third">
+    <a>Caloundra Music Festival</a>
+    <img src="Concert1.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID: 112543634</p>
+  <p>Date: 17/09/2022</p>
+</article>
+<article class="w3-third">
+    <a>Brad Paisley Concert</a>
+    <img src="Concert5.jpg" alt="Random Name" style="width:100%">
+    <p>Booking ID: 112543235</p>
+  <p>Date: 15/09/2022</p>
+</article>
+<article class="w3-third">
+  <a>5 Seconds Of Summer Concert</a>
+  <img src="Concert10.jpeg" alt="Random Name" style="width:100%">
+  <p>Booking ID: 112548967</p>
+  <p>Date: 12/09/2022</p>
+</article>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    </section>
+
+<article class="w3-third">
+    <a>Listen Out Brisbane</a>
+  <img src="Concert3.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID: 112545765</p>
+  <p>Date: 08/09/2022</p>
+</article>
+<article class="w3-third">
+    <a>Polo G Concert</a>
+  <img src="Concert12.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID: 112542212</p>
+  <p>Date: 01/09/2022</p>
+</article>
+<article class="w3-third">
+    <a>Empty</a>
+  <img src="Concert13.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID:</p>
+  <p>Date:</p>
+</article>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    </section>
+
+<article class="w3-third">
+    <a>Empty</a>
+  <img src="Concert13.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID:</p>
+  <p>Date:</p>
+</article>
+<article class="w3-third">
+    <a>Empty</a>
+  <img src="Concert13.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID:</p>
+  <p>Date:</p>
+</article>
+<article class="w3-third">
+    <a>Empty</a>
+  <img src="Concert13.jpg" alt="Random Name" style="width:100%">
+  <p>Booking ID:</p>
+  <p>Date:</p>
+</article>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <p class="w3-opacity"><i>We Give popular Music Events To The People</i></p>
+    </section>
+    
+    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <p class="w3-medium">
+        Powered by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Festivals of Music</a>
+        </p>
+        </footer>
+
+</body>
+</html>
