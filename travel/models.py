@@ -15,8 +15,8 @@ class User(db.Model, UserMixin):
 
 
     comments = db.relationship('Comment', backref='user')
-    events_com = db.relationship('Event', secondary='comment', backref=db.backref('commented_users'))
-    tickets_sold = db.relationship('sale', backref='UserID')
+    events_com = db.relationship('Event', secondary='Comment', backref=db.backref('commented_users'))
+    tickets_sold = db.relationship('Sale', backref='UserID')
 
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
@@ -88,9 +88,9 @@ class Ticket_type(db.Model):
 
 class Comment(db.Model):
     __tablename__ = 'Comment'
+    comment_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.EventID'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.UserID'))
-    comment_id = db.Column(db.Integer, primary_key=True)
     comment_date = db.Column(db.Time, nullable=False, default=datetime.now())
     comment_text = db.Column(db.String, nullable=False)
 
