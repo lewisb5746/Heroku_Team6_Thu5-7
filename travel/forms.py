@@ -12,13 +12,13 @@ class EventForm(FlaskForm):
   description = TextAreaField('Description', validators=[InputRequired()])
   artist = StringField('Artist Name', validators=[InputRequired])
   num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired])
-  image1 = FileField('Destination Image', validators=[
+  image1 = FileField('Event Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  image2 = FileField('Destination Image', validators=[
+  image2 = FileField('Event Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  image3 = FileField('Destination Image', validators=[
+  image3 = FileField('Event Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   submit = SubmitField("Create")
