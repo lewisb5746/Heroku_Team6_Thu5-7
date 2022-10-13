@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     UserID = db.Column(db.Integer, primary_key=True)
     First_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     Last_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
-    Phone_num = db.Column(db.int(10), nullabel=False)
+    Phone_num = db.Column(db.integer(10), nullabel=False)
     email = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
 
@@ -35,9 +35,9 @@ class Event(db.Model):
     EventDateTime = db.column(db.datetime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.column(db.text, nullable=True)
-    ArtistID = db.column(db.int(10), db.foreignKey('Artist.ArtistID'))
-    NumTickets = db.column(db.int(4))
-    NumTicketsSold = db.column(db.int(4))
+    ArtistID = db.column(db.integer(10), db.foreignKey('Artist.ArtistID'))
+    NumTickets = db.column(db.integer(4))
+    NumTicketsSold = db.column(db.integer(4))
     ImgLink1 = db.column(db.string(100), nullable=True)
     ImgLink2 = db.column(db.string(100), nullable=True)
     ImgLink3 = db.column(db.string(100), nullable=True)
@@ -53,10 +53,10 @@ class Genre(db.model):
 class Sale(db.Model):
     __tablename__ = 'Sale'
     SaleID = db.Column(db.Integer, primary_key=True)
-    EventID = db.Column(db.Int(10), db.ForeignKey('event.EnentID'), nullable=False )
-    UserID = db.Column(db.Int(10), db.ForeignKey('user.UserID'), Nullable=False )
+    EventID = db.Column(db.integer(10), db.ForeignKey('event.EnentID'), nullable=False )
+    UserID = db.Column(db.integer(10), db.ForeignKey('user.UserID'), Nullable=False )
     Processing = db.column(db.string(20), nullable=False)
-    TicketID = db.column(db.int(6), nullable=False)
+    TicketID = db.column(db.integer(6), nullable=False)
     SaleDateTime  =db.column(db.datetime, nullable=False, default=datetime.now())
 
 
