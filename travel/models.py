@@ -1,5 +1,6 @@
 from . import db
 from datetime import datetime
+from sqlalchemy.types import Integer
 from flask_login import UserMixin
 
 
