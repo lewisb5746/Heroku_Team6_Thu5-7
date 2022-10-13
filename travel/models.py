@@ -3,13 +3,12 @@ from datetime import datetime
 from flask_login import UserMixin
 
 
-
 class User(db.Model, UserMixin):
     __tablename__='users' # good practice to specify table name
     UserID = db.Column(db.Integer, primary_key=True)
     First_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     Last_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
-    Phone_num = db.Column(db.int(10), nullabel=False)
+    Phone_num = db.Column(db.Integer(10), nullabel=False)
     email = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
 
@@ -17,6 +16,9 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref='user')
     events_com = db.relationship('Event', secondary='comment', backref=db.backref('commented_users'))
     Ticket_Sold = db.relationship('sale', backref='UserID')
+
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
@@ -28,6 +30,9 @@ class Artist(db.Model):
 
     Event_artist = db.relationship('Event', backref='Event_Artist')
 
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
+
 class Event(db.Model):
     __tablename__ = 'Event'
     EnentID = db.Column(db.Integer, primary_key=True)
@@ -35,9 +40,9 @@ class Event(db.Model):
     EventDateTime = db.column(db.datetime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.column(db.text, nullable=True)
-    ArtistID = db.column(db.int(10), db.foreignKey('Artist.ArtistID'))
-    NumTickets = db.column(db.int(4))
-    NumTicketsSold = db.column(db.int(4))
+    ArtistID = db.column(db.integer(10), db.foreignKey('Artist.ArtistID'))
+    NumTickets = db.column(db.integer(4))
+    NumTicketsSold = db.column(db.integer(4))
     ImgLink1 = db.column(db.string(100), nullable=True)
     ImgLink2 = db.column(db.string(100), nullable=True)
     ImgLink3 = db.column(db.string(100), nullable=True)
@@ -45,19 +50,28 @@ class Event(db.Model):
     Ticket_Sold = db.relationship('sale', backref='EventID')
     Type = db.relationship('Ticket_type', backref='EventID')
 
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
+
 class Genre(db.model):
     __tablename__ = 'Genre'
     EnentID = db.Column(db.Integer, primary_key=True)
     Genre = db.column(db.string(20), nullable=False)
 
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
+
 class Sale(db.Model):
     __tablename__ = 'Sale'
     SaleID = db.Column(db.Integer, primary_key=True)
-    EventID = db.Column(db.Int(10), db.ForeignKey('event.EnentID'), nullable=False )
-    UserID = db.Column(db.Int(10), db.ForeignKey('user.UserID'), Nullable=False )
+    EventID = db.Column(db.integer(10), db.ForeignKey('event.EnentID'), nullable=False )
+    UserID = db.Column(db.integer(10), db.ForeignKey('user.UserID'), Nullable=False )
     Processing = db.column(db.string(20), nullable=False)
-    TicketID = db.column(db.int(6), nullable=False)
+    TicketID = db.column(db.integer(6), nullable=False)
     SaleDateTime  =db.column(db.datetime, nullable=False, default=datetime.now())
+
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
 
 
 class Ticket_type(db.model):
@@ -68,6 +82,9 @@ class Ticket_type(db.model):
     TikcetDescription = db.column(db.string(100), nullable=True)
     TicketPrice = db.column(db.numeric(15),nullable=False)
 
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
+
 class comment(db.Model):
     __tablename__ = 'Comment'
     EventID = db.Column(db.Integer, db.ForeignKey('event.EventID'))
@@ -75,6 +92,9 @@ class comment(db.Model):
     CommentID = db.Column(db.Integer, primary_key=True)
     CommentDate = db.column(db.datetime, nullable=False, default=datetime.now())
     Comment = db.column(db.text, nullable=False)
+
+    def __repr__(self): #string print method
+        return "<Name: {}>".format(self.name)
 
 
 
