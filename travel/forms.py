@@ -10,8 +10,8 @@ class EventForm(FlaskForm):
   name = StringField('EventName', validators=[InputRequired()])
   eventDateTime = DateTimeField('Event Date Time', validators=[InputRequired()])
   description = TextAreaField('Description', validators=[InputRequired()])
-  artist = StringField('Artist Name', validators=[InputRequired])
-  num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired])
+  artist = StringField('Artist Name', validators=[InputRequired()])
+  num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired()])
   image1 = FileField('Event Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
@@ -31,10 +31,10 @@ class LoginForm(FlaskForm):
 
 #User register
 class RegisterForm(FlaskForm):
-    fist_name = StringField('First Name', validators=[InputRequired])
-    last_name = StringField('Last Name', validators=[InputRequired])
+    fist_name = StringField('First Name', validators=[InputRequired()])
+    last_name = StringField('Last Name', validators=[InputRequired()])
     user_name=StringField("User Name", validators=[InputRequired()])
-    phone_num = IntegerField('Phone Number', validators=[InputRequired])
+    phone_num = IntegerField('Phone Number', validators=[InputRequired()])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
     
     #linking two fields - password should be equal to data entered in confirm
