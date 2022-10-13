@@ -1,18 +1,18 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Destination, Comment
+from .models import Event, comment
 from .forms import DestinationForm, CommentForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
 
-bp = Blueprint('destination', __name__, url_prefix='/destinations')
+bp = Blueprint('Event', __name__, url_prefix='/Event')
 
-@bp.route('/<id>')
-def show(id):
-    destination = Destination.query.filter_by(id=id).first()
+@bp.route('/<EventID>')
+def show(EventID):
+    Event = Event.query.filter_by(EventID=EventID).first()
     # create the comment form
     cform = CommentForm()    
-    return render_template('destinations/show.html', destination=destination, form=cform)
+    return render_template('Events/show.html', destination=Event, form=cform)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 def create():
@@ -21,16 +21,16 @@ def create():
   if form.validate_on_submit():
     #call the function that checks and returns image
     db_file_path=check_upload_file(form)
-    destination=Destination(name=form.name.data,description=form.description.data, 
+    Event=Event(name=form.name.data,description=form.description.data, 
     image=db_file_path,currency=form.currency.data)
     # add the object to the db session
-    db.session.add(destination)
+    db.session.add(Event)
     # commit to the database
     db.session.commit()
     print('Successfully created new travel destination', 'success')
     #Always end with redirect when form is valid
-    return redirect(url_for('destination.create'))
-  return render_template('destinations/create.html', form=form)
+    return redirect(url_for('Event.create'))
+  return render_template('Events/create.html', form=form)
 
 def check_upload_file(form):
   #get file data from form  
@@ -46,15 +46,15 @@ def check_upload_file(form):
   fp.save(upload_path)
   return db_upload_path
 
-@bp.route('/<destination>/comment', methods = ['GET', 'POST'])  
-def comment(destination):  
+@bp.route('/<Event>/comment', methods = ['GET', 'POST'])  
+def comment(Event):  
     form = CommentForm()  
     #get the destination object associated to the page and the comment
-    destination_obj = Destination.query.filter_by(id=destination).first()  
+    Event_obj = Event.query.filter_by(id=Event).first()  
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text=form.text.data,  
-                        destination=destination_obj) 
+      comment = comment(text=form.text.data,  
+                        destination=Event_obj) 
       #here the back-referencing works - comment.destination is set
       # and the link is created
       db.session.add(comment) 
@@ -64,5 +64,5 @@ def comment(destination):
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
     # using redirect sends a GET request to destination.show
-    return redirect(url_for('destination.show', id=destination))
+    return redirect(url_for('Event.show', id=Event))
     

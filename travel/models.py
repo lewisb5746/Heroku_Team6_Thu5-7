@@ -23,10 +23,10 @@ class User(db.Model, UserMixin):
 class Artist(db.Model):
     __tablename__ = 'Artist'
     ArtistID = db.Column(db.Integer, primary_key=True)
-    name = db.column(db.string(30), index=True, unique=True, nullable=False)
+    name = db.Column(db.string(30), index=True, unique=True, nullable=False)
     genre = db.Column(db.string(15), nullable=True)
-    description = db.column(db.text, nullable=True)
-    ImgLinkAristProfile = db.column(db.string(100), nullable=True)
+    description = db.Column(db.text, nullable=True)
+    ImgLinkAristProfile = db.Column(db.string(100), nullable=True)
 
     Event_artist = db.relationship('Event', backref='Event_Artist')
 
@@ -36,16 +36,16 @@ class Artist(db.Model):
 class Event(db.Model):
     __tablename__ = 'Event'
     EnentID = db.Column(db.Integer, primary_key=True)
-    name = db.column(db.string(30), index=True, unique=True, nullable=False)
-    EventDateTime = db.column(db.datetime, nullable=False)
+    name = db.Column(db.string(30), index=True, unique=True, nullable=False)
+    EventDateTime = db.Column(db.datetime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
-    description = db.column(db.text, nullable=True)
-    ArtistID = db.column(db.integer(10), db.foreignKey('Artist.ArtistID'))
-    NumTickets = db.column(db.integer(4))
-    NumTicketsSold = db.column(db.integer(4))
-    ImgLink1 = db.column(db.string(100), nullable=True)
-    ImgLink2 = db.column(db.string(100), nullable=True)
-    ImgLink3 = db.column(db.string(100), nullable=True)
+    description = db.Column(db.text, nullable=True)
+    ArtistID = db.Column(db.integer(10), db.foreignKey('Artist.ArtistID'))
+    NumTickets = db.Column(db.integer(4))
+    NumTicketsSold = db.Column(db.integer(4))
+    ImgLink1 = db.Column(db.string(100), nullable=True)
+    ImgLink2 = db.Column(db.string(100), nullable=True)
+    ImgLink3 = db.Column(db.string(100), nullable=True)
 
     Ticket_Sold = db.relationship('sale', backref='EventID')
     Type = db.relationship('Ticket_type', backref='EventID')
@@ -56,7 +56,7 @@ class Event(db.Model):
 class Genre(db.model):
     __tablename__ = 'Genre'
     EnentID = db.Column(db.Integer, primary_key=True)
-    Genre = db.column(db.string(20), nullable=False)
+    Genre = db.Column(db.string(20), nullable=False)
 
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
@@ -66,9 +66,9 @@ class Sale(db.Model):
     SaleID = db.Column(db.Integer, primary_key=True)
     EventID = db.Column(db.integer(10), db.ForeignKey('event.EnentID'), nullable=False )
     UserID = db.Column(db.integer(10), db.ForeignKey('user.UserID'), Nullable=False )
-    Processing = db.column(db.string(20), nullable=False)
-    TicketID = db.column(db.integer(6), nullable=False)
-    SaleDateTime  =db.column(db.datetime, nullable=False, default=datetime.now())
+    Processing = db.Column(db.string(20), nullable=False)
+    TicketID = db.Column(db.integer(6), nullable=False)
+    SaleDateTime  =db.Column(db.datetime, nullable=False, default=datetime.now())
 
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
