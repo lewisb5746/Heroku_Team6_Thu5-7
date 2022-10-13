@@ -41,7 +41,7 @@ class Event(db.Model):
     event_date_time = db.Column(db.Time, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.Column(db.String, nullable=True)
-    artist_id = db.Column(db.Numeric(10), db.ForeignKey('Artist.ArtistID'))
+    artist_id = db.Column(db.Numeric(10), db.ForeignKey('Artist.artist_id'))
     num_tickets = db.Column(db.Numeric(4))
     num_tickets_sold = db.Column(db.Numeric(4))
     img_link1 = db.Column(db.String(100), nullable=True)
@@ -65,8 +65,8 @@ class Genre(db.Model):
 class Sale(db.Model):
     __tablename__ = 'Sale'
     sale_id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Numeric(10), db.ForeignKey('event.EnentID'), nullable=False )
-    user_id = db.Column(db.Numeric(10), db.ForeignKey('user.UserID'), nullable=False )
+    event_id = db.Column(db.Numeric(10), db.ForeignKey('event.event_id'), nullable=False )
+    user_id = db.Column(db.Numeric(10), db.ForeignKey('user.user_id'), nullable=False )
     processing = db.Column(db.String(20), nullable=False)
     ticket_id = db.Column(db.Numeric(6), nullable=False)
     sale_date_time  =db.Column(db.Time, nullable=False, default=datetime.now())
@@ -78,7 +78,7 @@ class Sale(db.Model):
 class Ticket_type(db.Model):
     __tablename__ = 'Ticket_type'
     ticket_id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Integer, db.ForeignKey('event.EventID'), nullable=False)
+    event_id = db.Column(db.Integer, db.ForeignKey('event.event_id'), nullable=False)
     ticket_name = db.Column(db.String(25), nullable=False)
     ticket_description = db.Column(db.String(100), nullable=True)
     ticket_price = db.Column(db.Numeric(15),nullable=False)
@@ -89,8 +89,8 @@ class Ticket_type(db.Model):
 class Comment(db.Model):
     __tablename__ = 'Comment'
     comment_id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Integer, db.ForeignKey('event.EventID'))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.UserID'))
+    event_id = db.Column(db.Integer, db.ForeignKey('Event.event_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('User.user_id'))
     comment_date = db.Column(db.Time, nullable=False, default=datetime.now())
     comment_text = db.Column(db.String, nullable=False)
 
