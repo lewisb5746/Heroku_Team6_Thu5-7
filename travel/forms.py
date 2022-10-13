@@ -1,19 +1,26 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField
+from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, DateTimeField, IntegerField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 
 ALLOWED_FILE = {'PNG','JPG','png','jpg'}
 
 #Create new destination
-class DestinationForm(FlaskForm):
-  name = StringField('Country', validators=[InputRequired()])
-  description = TextAreaField('Description', 
-            validators=[InputRequired()])
-  image = FileField('Destination Image', validators=[
+class EventForm(FlaskForm):
+  name = StringField('EventName', validators=[InputRequired()])
+  eventDateTime = DateTimeField('Event Date Time', validators=[InputRequired()])
+  description = TextAreaField('Description', validators=[InputRequired()])
+  artist = StringField('Artist Name', validators=[InputRequired])
+  num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired])
+  image1 = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  currency = StringField('Currency', validators=[InputRequired()])
+  image2 = FileField('Destination Image', validators=[
+    FileRequired(message='Image cannot be empty'),
+    FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
+  image3 = FileField('Destination Image', validators=[
+    FileRequired(message='Image cannot be empty'),
+    FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   submit = SubmitField("Create")
     
 #User login
@@ -24,7 +31,10 @@ class LoginForm(FlaskForm):
 
 #User register
 class RegisterForm(FlaskForm):
+    fist_name = StringField('First Name', validators=[InputRequired])
+    last_name = StringField('Last Name', validators=[InputRequired])
     user_name=StringField("User Name", validators=[InputRequired()])
+    phone_num = IntegerField('Phone Number', validators=[InputRequired])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
     
     #linking two fields - password should be equal to data entered in confirm
