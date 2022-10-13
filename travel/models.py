@@ -5,7 +5,7 @@ from flask_login import UserMixin
 
 
 class User(db.Model, UserMixin):
-    __tablename__='users' # good practice to specify table name
+    __tablename__='User' # good practice to specify table name
     user_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     last_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
@@ -65,8 +65,8 @@ class Genre(db.Model):
 class Sale(db.Model):
     __tablename__ = 'Sale'
     sale_id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Numeric(10), db.ForeignKey('event.event_id'), nullable=False )
-    user_id = db.Column(db.Numeric(10), db.ForeignKey('user.user_id'), nullable=False )
+    event_id = db.Column(db.Numeric(10), db.ForeignKey('Event.event_id'), nullable=False )
+    user_id = db.Column(db.Numeric(10), db.ForeignKey('User.user_id'), nullable=False )
     processing = db.Column(db.String(20), nullable=False)
     ticket_id = db.Column(db.Numeric(6), nullable=False)
     sale_date_time  =db.Column(db.Time, nullable=False, default=datetime.now())
@@ -78,7 +78,7 @@ class Sale(db.Model):
 class Ticket_type(db.Model):
     __tablename__ = 'Ticket_type'
     ticket_id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Integer, db.ForeignKey('event.event_id'), nullable=False)
+    event_id = db.Column(db.Integer, db.ForeignKey('Event.event_id'), nullable=False)
     ticket_name = db.Column(db.String(25), nullable=False)
     ticket_description = db.Column(db.String(100), nullable=True)
     ticket_price = db.Column(db.Numeric(15),nullable=False)
