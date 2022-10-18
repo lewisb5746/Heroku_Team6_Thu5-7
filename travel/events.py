@@ -1,11 +1,13 @@
+from locale import currency
 from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Event, Comment
+from datetime import datetime
 from .forms import EventForm, CommentForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
 
-bp = Blueprint('event', __name__, url_prefix='/event')
+bp = Blueprint('event', __name__, url_prefix='/events')
 
 @bp.route('/<event_id>')
 def show(event_id):
@@ -22,7 +24,7 @@ def create():
     #call the function that checks and returns image
     db_file_path=check_upload_file(form)
     event=Event(name=form.name.data,description=form.description.data, 
-    image=db_file_path,currency=form.currency.data)
+    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=datetime.now())
     # add the object to the db session
     db.session.add(event)
     # commit to the database
@@ -47,14 +49,14 @@ def check_upload_file(form):
   return db_upload_path
 
 @bp.route('/<event_id>/comment', methods = ['GET', 'POST'])  
-def comment(event):  
+def comment(event_id):  
     form = CommentForm()  
     #get the event object associated to the page and the comment
-    event_obj = event.query.filter_by(id=event).first()  
+    event_obj = Event.query.filter_by(event_id=event_id).first()  
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = comment(text=form.text.data,  
-                        event=event_obj) 
+      comment = Comment(comment_text=form.text.data,  
+                        event_id=event_id) 
       #here the back-referencing works - comment.event is set
       # and the link is created
       db.session.add(comment) 
@@ -64,5 +66,5 @@ def comment(event):
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
     # using redirect sends a GET request to event.show
-    return redirect(url_for('event.show', id=event))
+    return redirect(url_for('event.show', event_id=event_id))
     

@@ -38,7 +38,7 @@ class Event(db.Model):
     __tablename__ = 'Event'
     event_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), index=True, unique=True, nullable=False)
-    event_date_time = db.Column(db.Time, nullable=False)
+    event_date_time = db.Column(db.DateTime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.Column(db.String, nullable=True)
     artist_id = db.Column(db.Numeric(10), db.ForeignKey('Artist.artist_id'))
@@ -48,7 +48,7 @@ class Event(db.Model):
     img_link2 = db.Column(db.String(100), nullable=True)
     img_link3 = db.Column(db.String(100), nullable=True)
 
-    tickets_sold = db.relationship('sale', backref='EventID')
+    tickets_sold = db.relationship('Sale', backref='EventID')
     type = db.relationship('Ticket_type', backref='EventID')
 
     def __repr__(self): #string print method
@@ -91,7 +91,7 @@ class Comment(db.Model):
     comment_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('Event.event_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('User.user_id'))
-    comment_date = db.Column(db.Time, nullable=False, default=datetime.now())
+    comment_date = db.Column(db.DateTime, nullable=False, default=datetime.now())
     comment_text = db.Column(db.String, nullable=False)
 
     def __repr__(self): #string print method
