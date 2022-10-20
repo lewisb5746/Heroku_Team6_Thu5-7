@@ -24,7 +24,7 @@ class EventForm(FlaskForm):
     #FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   submit = SubmitField("Create")
-    
+    #test
 #User login
 class LoginForm(FlaskForm):
     user_email=StringField("Email", validators=[InputRequired('Enter user email')])
