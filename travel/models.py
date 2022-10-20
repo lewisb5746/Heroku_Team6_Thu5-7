@@ -49,6 +49,7 @@ class Event(db.Model):
 
     tickets_sold = db.relationship('Sale', backref='EventID')
     type = db.relationship('Ticket_type', backref='EventID')
+    comments = db.relationship('Comment', backref='event')
 
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
