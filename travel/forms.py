@@ -9,7 +9,8 @@ ALLOWED_FILE = {'PNG','JPG','png','jpg'}
 class EventForm(FlaskForm):
   name = StringField('EventName', validators=[InputRequired()])
   currency = StringField('Currency', validators=[InputRequired()])
-  eventDateTime = StringField('Event Date Time', validators=[InputRequired()])
+  #eventDateTime = StringField('Event Date Time', validators=[InputRequired()])
+  eventDateTime = DateTimeField('Event Date Time', validators=[InputRequired()])
   description = TextAreaField('Description', validators=[InputRequired()])
   artist = StringField('Artist Name', validators=[InputRequired()])
   num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired()])
