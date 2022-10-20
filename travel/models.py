@@ -12,10 +12,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
 
-
     comments = db.relationship('Comment', backref='user')
     events_com = db.relationship('Event', secondary='Comment', backref=db.backref('commented_users'))
-    tickets_sold = db.relationship('Sale', backref='UserID')
+    tickets_sold = db.relationship('Sale', backref='user')
 
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
@@ -47,8 +46,8 @@ class Event(db.Model):
     img_link2 = db.Column(db.String(100), nullable=True)
     img_link3 = db.Column(db.String(100), nullable=True)
 
-    tickets_sold = db.relationship('Sale', backref='EventID')
-    type = db.relationship('Ticket_type', backref='EventID')
+    tickets_sold = db.relationship('Sale', backref='event')
+    type = db.relationship('Ticket_type', backref='event')
     comments = db.relationship('Comment', backref='event')
 
     def __repr__(self): #string print method
