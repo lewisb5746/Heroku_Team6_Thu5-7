@@ -26,7 +26,7 @@ class EventForm(FlaskForm):
     
 #User login
 class LoginForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
+    user_email=StringField("Email", validators=[InputRequired('Enter user email')])
     password=PasswordField("Password", validators=[InputRequired('Enter user password')])
     submit = SubmitField("Login")
 
@@ -34,9 +34,8 @@ class LoginForm(FlaskForm):
 class RegisterForm(FlaskForm):
     fist_name = StringField('First Name', validators=[InputRequired()])
     last_name = StringField('Last Name', validators=[InputRequired()])
-    user_name=StringField("User Name", validators=[InputRequired()])
     phone_num = IntegerField('Phone Number', validators=[InputRequired()])
-    email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
+    email = StringField("Email Address", validators=[Email("Please enter a valid email")])
     
     #linking two fields - password should be equal to data entered in confirm
     password=PasswordField("Password", validators=[InputRequired(),
