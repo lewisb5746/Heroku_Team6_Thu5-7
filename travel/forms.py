@@ -33,7 +33,7 @@ class LoginForm(FlaskForm):
 
 #User register
 class RegisterForm(FlaskForm):
-    fist_name = StringField('First Name', validators=[InputRequired()])
+    first_name = StringField('First Name', validators=[InputRequired()])
     last_name = StringField('Last Name', validators=[InputRequired()])
     phone_num = IntegerField('Phone Number', validators=[InputRequired()])
     email = StringField("Email Address", validators=[Email("Please enter a valid email")])

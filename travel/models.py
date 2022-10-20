@@ -5,9 +5,9 @@ from flask_login import UserMixin
 
 class User(db.Model, UserMixin):
     __tablename__='User' # good practice to specify table name
-    user_id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
-    last_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(100), index=True, nullable=False)
+    last_name = db.Column(db.String(100), index=True, nullable=False)
     phone_num = db.Column(db.Numeric(10), nullable=False)
     email = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
@@ -65,7 +65,7 @@ class Sale(db.Model):
     __tablename__ = 'Sale'
     sale_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Numeric(10), db.ForeignKey('Event.event_id'), nullable=False )
-    user_id = db.Column(db.Numeric(10), db.ForeignKey('User.user_id'), nullable=False )
+    id = db.Column(db.Numeric(10), db.ForeignKey('User.id'), nullable=False )
     processing = db.Column(db.String(20), nullable=False)
     ticket_id = db.Column(db.Numeric(6), nullable=False)
     sale_date_time  =db.Column(db.Time, nullable=False, default=datetime.now())
@@ -89,7 +89,7 @@ class Comment(db.Model):
     __tablename__ = 'Comment'
     comment_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('Event.event_id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('User.user_id'))
+    id = db.Column(db.Integer, db.ForeignKey('User.id'))
     comment_date = db.Column(db.DateTime, nullable=False, default=datetime.now())
     comment_text = db.Column(db.String, nullable=False)
 
@@ -128,7 +128,7 @@ class Comment(db.Model):
 #     text = db.Column(db.String(400))
 #     created_at = db.Column(db.DateTime, default=datetime.now())
 #     #add the foreign keys
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+#     id = db.Column(db.Integer, db.ForeignKey('users.id'))
 #     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
 
 

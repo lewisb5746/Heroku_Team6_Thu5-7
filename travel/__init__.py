@@ -7,6 +7,7 @@ db=SQLAlchemy()
 
 def create_app():
     app=Flask(__name__)
+    app.debug=True
 
     #we use this utility module to display forms quickly
     bootstrap = Bootstrap4(app)
@@ -20,14 +21,27 @@ def create_app():
 
     #login stuff
     login_manager = LoginManager()
-    login_manager.login_view=""
+    login_manager.login_view='auth.login'
+    login_manager.init_app(app)
+
+    from .models import User  # importing here to avoid circular references
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+
+    from .views import mainbp
+    app.register_blueprint(mainbp)
+
+    # register the blueprint with the app
+    from .auth import bp
+    app.register_blueprint(bp)
 
     #add Blueprints
-    from . import views
-    app.register_blueprint(views.mainbp)
-    from . import events
-    app.register_blueprint(events.bp)
-    from . import auth
-    app.register_blueprint(auth.bp)
+    # from . import views
+    # app.register_blueprint(views.mainbp)
+    #from . import events
+    #app.register_blueprint(events.bp)
+    #from . import auth
+    #app.register_blueprint(auth.bp)
 
     return app
