@@ -56,7 +56,7 @@ def comment(event_id):
     if form.validate_on_submit():  
       #read the comment from the form
       comment = Comment(comment_text=form.text.data,  
-                        event_id=event_id) 
+                        event_id=event_id)
       #here the back-referencing works - comment.event is set
       # and the link is created
       db.session.add(comment) 
