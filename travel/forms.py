@@ -8,7 +8,6 @@ ALLOWED_FILE = {'PNG','JPG','png','jpg'}
 #Create new destination
 class EventForm(FlaskForm):
   name = StringField('EventName', validators=[InputRequired()])
-  currency = StringField('Currency', validators=[InputRequired()])
   #eventDateTime = StringField('Event Date Time', validators=[InputRequired()])
   eventDateTime = DateTimeField('Event Date Time (yyyy-mm-dd HH:MM)', validators=[InputRequired()], format='%Y-%m-%d %H:%M')
   description = TextAreaField('Description', validators=[InputRequired()])
@@ -16,12 +15,6 @@ class EventForm(FlaskForm):
   num_tickets = IntegerField('Number Of Tickets', validators=[InputRequired()])
   image = FileField('Event Image', validators=[
     FileRequired(message='Image cannot be empty'),
-    FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  image2 = FileField('Event Image', validators=[
-    #FileRequired(message='Image cannot be empty'),
-    FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  image3 = FileField('Event Image', validators=[
-    #FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   submit = SubmitField("Create")
     #test
