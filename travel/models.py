@@ -43,8 +43,7 @@ class Event(db.Model):
     num_tickets = db.Column(db.Numeric(4))
     num_tickets_sold = db.Column(db.Numeric(4))
     img_link1 = db.Column(db.String(100), nullable=True)
-    img_link2 = db.Column(db.String(100), nullable=True)
-    img_link3 = db.Column(db.String(100), nullable=True)
+
 
     tickets_sold = db.relationship('Sale', backref='event')
     type = db.relationship('Ticket_type', backref='event')
