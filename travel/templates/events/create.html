@@ -12,10 +12,11 @@
 
   <!-- DESCRIPTION -->
 
-  <div>
+  <div id="description">
 
-    <form method="post" id="description">
+    <form method=post>
       {{ form.csrf_token() }}
+      {{ wtf.render_hidden_errors(form) }}
 
       <div id="card">
         <div id="create" class="row justify-content-sm-center">
@@ -80,7 +81,6 @@
           </div>
         </div>
       </div>
-
     </form>
 
   </div>
