@@ -4,18 +4,208 @@
       <div class="container">
          <div class="row mt-5 mb-5 justify-content-center">
             <div class="col-md-10">
-               <div class="media border p-3 d-flex justify-content-start">
-                  <img class="align-self-center me-3" style="max-width:120px"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png"
-                     alt="Planet Earth">
-                  <div class="align-self-center media-body">
-                     <h5 class="mt-0">Find the best events on earth</h5>
-                     <p class="d-none d-sm-block">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                        scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                        turpis. Fusce condimentum nunc ac nisi vulputate fringilla.</p>
-                     <a href="#" class="btn btn-primary">Join Now</a>
+               <div>
+
+                  <!-- CAROUSEL -->
+              
+                  <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="10000">
+                        <div style="height: 300px">
+                          <img src="img/Picture 1.png-1.png">
+                        </div>
+                        <div class="carousel-caption d-none d-sm-block">
+                          <h5><b>{{featured_event_name}}</b></h5>
+                          <p>{{featured_event_desc}}</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" data-bs-interval="2000">
+                        <div style="height: 300px">
+                          <img src="img/Picture 1.png-2.png">
+                        </div>
+                        <div class="carousel-caption d-none d-sm-block">
+                          <h5><b>{{featured_event_name}}</b></h5>
+                          <p>{{featured_event_desc}}</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div style="height: 300px">
+                          <img src="img/Picture 1.png-4.png">
+                        </div>
+                        <div class="carousel-caption d-none d-sm-block">
+                          <h5><b>{{featured_event_name}}</b></h5>
+                          <p>{{featured_event_desc}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                   </div>
-               </div>
+              
+                  <!-- NAV BAR 2 -->
+              
+                  <div>
+                    <nav class="navbar navbar-expand-sm navbar-dark">
+                      <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Popular events</a>
+                        <ul class="navbar-nav mb-lg-0">
+                          <li class="nav-item">
+                            <button class="btn me-2 btn-primary" type="submit">Load All Events</button>
+                          </li>
+                          <li class="nav-item">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Select Category</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+              
+                  <!-- EVENT CARDS -->
+              
+                  <div>
+              
+                    <div class="row justify-content-evenly" id="events">
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
+                            <img src="img/Picture 1.png-3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-5.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-6.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-7.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-8.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-9.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-10.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-11.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                        <article class="col">
+                          <div id="card" class="card" style="width: 18rem;">
+                            <img src="img/Picture 1.png-12.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{event_name}}</h5>
+                              <p class="card-text">{{event_desc}}</p>
+                              <a href="event.html" class="btn btn-primary">See Event</a>
+                            </div>
+                          </div>
+                        </article>
+              
+                    </div>
+              
+                  </div>
+              
+                  <!-- CATEGORY OFFCANVAS -->
+              
+                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasDarkLabel">Categories</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" id="offcanvas">
+                      <ul>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 3</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 4</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 5</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Category 6</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
             </div>
          </div>
 
