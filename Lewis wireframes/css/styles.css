@@ -1,0 +1,132 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: rgb(81, 81, 81);
+  font-family: Arial, Calibri, Helvetica, sans-serif;
+}
+
+#nav-level {
+  margin: 0;
+  top: 50%;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.nav-item {
+  display: inline-block;
+}
+#offcanvas ul li {
+  list-style: none;
+  padding: 20px;
+}
+#offcanvas ul li a:link {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  width: 200px;
+}
+#offcanvas ul li a:hover {
+  background-color: red;
+}
+
+#middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+h5 b {
+  color: white;
+}
+
+#carouselExampleDark img {
+  max-width: 100%;
+  opacity: 0.5;
+}
+#card img {
+  width: 265px;
+  height: auto;
+}
+#eventpage img {
+  display: block;
+  width: 100%;
+}
+
+#events {
+  padding: 30px;
+}
+article {
+  padding-bottom: 30px;
+}
+article div {
+  padding: 10px;
+}
+article div div * {
+  color: white;
+}
+#card {
+  background-color: rgb(33, 33, 33);
+}
+#description {
+  color: white;
+  border: solid;
+  border-color: rgb(81, 81, 81);
+  border-left: 15px solid rgb(33, 33, 33);
+}
+
+#comment div {
+  padding-left: 10px;
+  padding-top: 10px;
+  text-align: left;
+  border-style: solid;
+  border-color: rgb(81, 81, 81);
+}
+#create #text {
+  padding-right: 10px;
+  max-width: 250px;
+}
+#create #textarea {
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+#create .col {
+  padding-left: 10px;
+  padding-top: 10px;
+  text-align: left;
+  border-style: solid;
+  border-color: rgb(81, 81, 81);
+}
+#card .col-md-3 {
+  color: white;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+#card #save {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: rgb(33, 33, 33);
+}
+
+/*
+
+COLOUR SCHEME:
+
+blue: #0d6efd
+dark grey: rgb(81, 81, 81)
+black: rgb(33, 33, 33)
+
+*/
