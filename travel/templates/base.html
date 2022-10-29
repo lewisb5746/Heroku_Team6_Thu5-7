@@ -6,38 +6,50 @@
    <title>My Events</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
 
 </head>
 
 <body>
    <!-- Header -->
-   <header class="bg-light border-bottom">
+   <header class="sticky-top">
 
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <div class="container">
 
-            <!-- Your Travel App Name or Logo -->
-            <a href="/" class="navbar-brand">
-               My Events
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-               aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-sm navbar-dark">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="/">Noisy Nights</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navbar -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-               <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link" href="/login">Login</a>
-                  <a class="nav-item nav-link" href="/register">Register</a>
-                  <a class="nav-item nav-link" href="/events/create">Create</a>
-                  <a class="nav-item nav-link" href="#">Events</a>
-                  <a class="nav-item nav-link" href="#">Bookings</a>
-                  <p>{{current_user.first_name}}</p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <div id="nav-level">
+                  <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     My Events
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                     <li><a class="dropdown-item" href="/events/create">Event 1</a></li>
+                     <li><a class="dropdown-item" href="/events/create">Event 2</a></li>
+                     <li><a class="dropdown-item" href="/events/create">Create New</a></li>
+                  </ul>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">Bookings</a>
+                  </li>
                </div>
+            </ul>
+            <form class="d-flex" role="search">
+               <input class="form-control me-2" type="search" placeholder="Search Events" aria-label="Search">
+               <button class="btn btn-primary" type="submit">Search</button>
+            </form>
             </div>
          </div>
       </nav>
