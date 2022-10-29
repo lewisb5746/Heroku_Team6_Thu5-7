@@ -2,6 +2,111 @@
 
 {% import "bootstrap4/form.html" as wtf %}
 {% block content %}
+<div id="eventpage">
+
+  <!-- EVENT IMAGE -->
+
+  <div style="height: 350px;">
+    <img src="">
+  </div>
+
+  <!-- KEY DETAILS -->
+
+  <div id="description">
+    <div id="card" class="row justify-content-sm-center">
+      <div id="create" class="col-md-3">
+        <h5><b>Tickets:</b></h5>
+        <div id="text"><input class="form-control" type="number" value=""></div>
+      </div> 
+      <div class="col-md-3">
+        <h5><b>Price per ticket:</b></h5>
+        <div class="input-group">
+          <span class="input-group-text btn btn-primary">$</span>
+          <div id="text"><input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h5><b>Event Image:</b></h5>
+        <div class="input-group">
+          <div id="text"><input type="file" class="form-control" id="inputGroupFile02"></div>
+        </div>
+      </div>
+      <div id="save" class="col-md-3">
+        <button class="btn btn-primary" style="width:150px;">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION -->
+
+  <div>
+
+    <div id="description">
+
+      <div id="card">
+        <div class="row justify-content-center" id="create">
+          <div class="col">
+            <h5><b>Event date:</b></h5>
+            <p><input id="startDate" class="btn btn-primary" type="date"/></p>
+          </div>
+          <div class="col">
+            <h5><b>Venue:</b></h5>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Select
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Brisbane City Convention Center</a></li>
+                <li><a class="dropdown-item" href="#">The Fortitude</a></li>
+                <li><a class="dropdown-item" href="#">Riverstage</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <h5><b>Genre/s:</b></h5>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Select
+              </button>
+              <form class="dropdown-menu p-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Jazz
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Classical
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Party
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <h5><b>Musician/s Playing:</b></h5>
+            <div id="text"><input class="form-control" type="text" value=""></div>
+          </div>
+        </div>
+        <div class="row" id="create">
+          <div class="col">
+            <h5><b>Description of event:</b></h5>
+            <div id="textarea"><textarea class="form-control" aria-label="With textarea"></textarea></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-12">
