@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% from "bootstrap4/form.html" import render_field %}
+{% import "bootstrap/form.html" as wtf %}
 {% block content %}
 <div id="eventpage">
 
@@ -20,23 +20,23 @@
         <div id="create" class="row justify-content-sm-center">
           <div class="col">
             <h5><b>Tickets:</b></h5>
-            <p>{{render_field(form.num_tickets)}}</p>
+            <p>{{wtf.render_field(form.num_tickets)}}</p>
           </div> 
           <div class="col">
             <h5><b>Event name:</b></h5>
-            <p>{{render_field(form.name)}}</p>
+            <p>{{wtf.render_field(form.name)}}</p>
           </div>
           <div class="col">
             <h5><b>Event Image:</b></h5>
             <div class="input-group">
-              <p>{{render_field(form.image)}}</p>
+              <p>{{wtf.render_field(form.image)}}</p>
             </div>
           </div>
         </div>
         <div class="row justify-content-center" id="create">
           <div class="col">
             <h5><b>Event Date Time (yyyy-mm-dd HH:MM):</b></h5>
-            <p>{{render_field(form.eventDateTime)}}</p>
+            <p>{{wtf.render_field(form.eventDateTime)}}</p>
           </div>
           <div class="col">
             <h5><b>Venue:</b></h5>
@@ -81,19 +81,19 @@
           </div>
           <div class="col">
             <h5><b>Musician/s Playing:</b></h5>
-            <p>{{render_field(form.artist)}}</p>
+            <p>{{wtf.render_field(form.artist)}}</p>
           </div>
         </div>
         <div class="row" id="create">
           <div class="col">
             <h5><b>Description of event:</b></h5>
-            <p>{{render_field(form.description)}}</p>
+            <p>{{wtf.render_field(form.description)}}</p>
           </div>
         </div>
         <div class="row justify-content-sm-center" id="create">
           <div class="col">
             <div id="save">
-              <p>{{render_field(form.submit)}}</p>
+              <p>{{wtf.render_field(form.submit)}}</p>
             </div>
           </div>
         </div>
@@ -101,6 +101,19 @@
 
     </div>
 
+  </div>
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+
+        <h1>Add Travel Destination</h1>
+        <p>Enter a country that you will help clients travel to.</p>
+
+        {{wtf.render_form(form)}}
+        
+      </div>
+    </div>
   </div>
 
 {% endblock %}
