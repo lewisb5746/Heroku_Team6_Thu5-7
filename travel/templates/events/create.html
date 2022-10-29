@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% import "bootstrap4/form.html" as wtf %}
+{% from "bootstrap4/form.html" import render_field %}
 {% block content %}
 <div id="eventpage">
 
@@ -10,33 +10,6 @@
     <img src="">
   </div>
 
-  <!-- KEY DETAILS -->
-
-  <div id="description">
-    <div id="card" class="row justify-content-sm-center">
-      <div id="create" class="col-md-3">
-        <h5><b>Tickets:</b></h5>
-        <div id="text"><input class="form-control" type="number" value=""></div>
-      </div> 
-      <div class="col-md-3">
-        <h5><b>Price per ticket:</b></h5>
-        <div class="input-group">
-          <span class="input-group-text btn btn-primary">$</span>
-          <div id="text"><input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"></div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <h5><b>Event Image:</b></h5>
-        <div class="input-group">
-          <div id="text"><input type="file" class="form-control" id="inputGroupFile02"></div>
-        </div>
-      </div>
-      <div id="save" class="col-md-3">
-        <button class="btn btn-primary" style="width:150px;">Save</button>
-      </div>
-    </div>
-  </div>
-
   <!-- DESCRIPTION -->
 
   <div>
@@ -44,10 +17,26 @@
     <div id="description">
 
       <div id="card">
+        <div id="create" class="row justify-content-sm-center">
+          <div class="col">
+            <h5><b>Tickets:</b></h5>
+            <p>{{render_field(form.num_tickets)}}</p>
+          </div> 
+          <div class="col">
+            <h5><b>Event name:</b></h5>
+            <p>{{render_field(form.name)}}</p>
+          </div>
+          <div class="col">
+            <h5><b>Event Image:</b></h5>
+            <div class="input-group">
+              <p>{{render_field(form.image)}}</p>
+            </div>
+          </div>
+        </div>
         <div class="row justify-content-center" id="create">
           <div class="col">
-            <h5><b>Event date:</b></h5>
-            <p><input id="startDate" class="btn btn-primary" type="date"/></p>
+            <h5><b>Event Date Time (yyyy-mm-dd HH:MM):</b></h5>
+            <p>{{render_field(form.eventDateTime)}}</p>
           </div>
           <div class="col">
             <h5><b>Venue:</b></h5>
@@ -92,32 +81,26 @@
           </div>
           <div class="col">
             <h5><b>Musician/s Playing:</b></h5>
-            <div id="text"><input class="form-control" type="text" value=""></div>
+            <p>{{render_field(form.artist)}}</p>
           </div>
         </div>
         <div class="row" id="create">
           <div class="col">
             <h5><b>Description of event:</b></h5>
-            <div id="textarea"><textarea class="form-control" aria-label="With textarea"></textarea></p>
+            <p>{{render_field(form.description)}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-sm-center" id="create">
+          <div class="col">
+            <div id="save">
+              <p>{{render_field(form.submit)}}</p>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
 
-  </div>
-</div>
-  <div class="container">
-    <div class="row mt-5">
-      <div class="col-md-12">
-
-        <h1>Add Event</h1>
-        <p>Enter an event to be listed on the site.</p>
-
-        {{wtf.render_form(form)}}
-        
-      </div>
-    </div>
   </div>
 
 {% endblock %}

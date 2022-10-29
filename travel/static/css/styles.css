@@ -74,13 +74,15 @@ article div div * {
   color: white;
 }
 #card {
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: rgb(33, 33, 33);
+  border-left: 15px solid rgb(33, 33, 33);
+  border-right: 15px solid rgb(33, 33, 33);
 }
 #description {
-  color: white;
   border: solid;
   border-color: rgb(81, 81, 81);
-  border-left: 15px solid rgb(33, 33, 33);
 }
 
 #comment div {
