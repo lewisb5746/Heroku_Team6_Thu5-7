@@ -14,7 +14,8 @@
 
   <div>
 
-    <div id="description">
+    <form method="post" id="description">
+      {{ form.csrf_token() }}
 
       <div id="card">
         <div id="create" class="row justify-content-sm-center">
@@ -57,26 +58,7 @@
               <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                 Select
               </button>
-              <form class="dropdown-menu p-4">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Jazz
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Classical
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Party
-                  </label>
-                </div>
-              </form>
+              
             </div>
           </div>
           <div class="col">
@@ -99,21 +81,8 @@
         </div>
       </div>
 
-    </div>
+    </form>
 
-  </div>
-
-  <div class="container">
-    <div class="row mt-5">
-      <div class="col-md-12">
-
-        <h1>Add Travel Destination</h1>
-        <p>Enter a country that you will help clients travel to.</p>
-
-        {{wtf.render_form(form)}}
-        
-      </div>
-    </div>
   </div>
 
 {% endblock %}
