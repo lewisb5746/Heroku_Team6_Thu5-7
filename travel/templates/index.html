@@ -9,7 +9,7 @@
       <div class="carousel-inner">
          <div class="carousel-item active" data-bs-interval="10000">
          <div style="height: 300px">
-            <img src="img/Picture 1.png-1.png">
+            <img src="{{events.0.img_link1}}">
          </div>
          <div class="carousel-caption d-none d-sm-block">
             <h5><b>{{featured_event_name}}</b></h5>
@@ -18,7 +18,7 @@
          </div>
          <div class="carousel-item" data-bs-interval="2000">
          <div style="height: 300px">
-            <img src="img/Picture 1.png-2.png">
+            <img src="{{events.1.img_link1}}">
          </div>
          <div class="carousel-caption d-none d-sm-block">
             <h5><b>{{featured_event_name}}</b></h5>
@@ -27,7 +27,7 @@
          </div>
          <div class="carousel-item">
          <div style="height: 300px">
-            <img src="img/Picture 1.png-4.png">
+            <img src="{{events.2.img_link1}}">
          </div>
          <div class="carousel-caption d-none d-sm-block">
             <h5><b>{{featured_event_name}}</b></h5>
@@ -50,7 +50,7 @@
    <div>
       <nav class="navbar navbar-expand-sm navbar-dark">
          <div class="container-fluid">
-         <a class="navbar-brand" href="#">Popular events</a>
+         <a class="navbar-brand" href="#">All events</a>
          <ul class="navbar-nav mb-lg-0">
             <li class="nav-item">
                <button class="btn me-2 btn-primary" type="submit">Load All Events</button>
@@ -98,19 +98,19 @@
 <!-- EVENT CARDS -->
 
 <div class="card-group">
-   <article class="col">
       {% for event in events %}
-      <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
-         <img class="card-img-top"
-            src={{event.img_link1}} alt="event picture">
-         <div class="card-body">
-            <h5 class="card-title">{{event.name}}</h5>
-            <p class="card-text">{{event.description}}</p>
+      <article class="col">
+         <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
+            <img class="card-img-top"
+               src={{event.img_link1}} alt="event picture">
+            <div class="card-body">
+               <h5 class="card-title">{{event.name}}</h5>
+               <p class="card-text">{{event.description}}</p>
+            </div>
+            <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
          </div>
-         <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
-      </div>
+      </article>
       {% endfor %}
-   </article>
 </div>
 
 {% endblock %}
