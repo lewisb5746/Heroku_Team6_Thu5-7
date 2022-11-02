@@ -14,7 +14,7 @@ class EventForm(FlaskForm):
   artist = StringField('', validators=[InputRequired()])
   num_tickets = IntegerField('', validators=[InputRequired()])
   image = FileField('', validators=[
-    FileRequired(message='Image cannot be empty'),
+    #FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   submit = SubmitField("Create")
     #test

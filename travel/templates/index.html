@@ -66,115 +66,6 @@
                     </nav>
                   </div>
               
-                  <!-- EVENT CARDS -->
-              
-                  <div>
-              
-                    <div class="row justify-content-evenly" id="events">
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
-                            <img src="static/image/Picture 1png-6.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-5.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-6.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-7.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-8.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-9.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-10.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-11.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                        <article class="col">
-                          <div id="card" class="card" style="width: 18rem;">
-                            <img src="img/Picture 1.png-12.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{event_name}}</h5>
-                              <p class="card-text">{{event_desc}}</p>
-                              <a href="event.html" class="btn btn-primary">See Event</a>
-                            </div>
-                          </div>
-                        </article>
-              
-                    </div>
-              
-                  </div>
-              
                   <!-- CATEGORY OFFCANVAS -->
               
                   <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -209,18 +100,23 @@
             </div>
          </div>
 
+         <!-- EVENT CARDS -->
+
          <div class="card-group">
-            {% for event in events %}
-            <div class="card mx-3">
-               <img class="card-img-top"
-                  src={{event.img_link1}} alt="event picture">
-               <div class="card-body">
-                  <h5 class="card-title">{{event.name}}</h5>
-                  <p class="card-text">{{event.description}}</p>
+            <article class="col">
+               {% for event in events %}
+               <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
+                  <img class="card-img-top"
+                     src={{event.img_link1}} alt="event picture">
+                  <div class="card-body">
+                     <h5 class="card-title">{{event.name}}</h5>
+                     <p class="card-text">{{event.description}}</p>
+                  </div>
+                  <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
                </div>
-               <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
-            </div>
-            {% endfor %}
+               {% endfor %}
+            </article>
          </div>
+
       </div>
 {% endblock %}

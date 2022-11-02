@@ -22,7 +22,7 @@ def create():
   form = EventForm()
   if form.validate_on_submit():
     #call the function that checks and returns image
-    db_file_path=check_upload_file(form)
+    db_file_path= '/static/image/event.png' #check_upload_file(form)
     event=Event(name=form.name.data,description=form.description.data, 
     img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=datetime.now())
     # add the object to the db session
