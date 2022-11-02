@@ -118,6 +118,9 @@ article div div * {
   padding-bottom: 20px;
   text-align: center;
 }
+.card-group {
+  padding: 20px;
+}
 
 nav {
   background-color: rgb(33, 33, 33);

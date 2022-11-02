@@ -1,122 +1,116 @@
 {% extends 'base.html' %}
 
 {% block content %}   
-      <div class="container">
-         <div class="row mt-5 mb-5 justify-content-center">
-            <div class="col-md-10">
-               <div>
+<div>
 
-                  <!-- CAROUSEL -->
-                  
-                  <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="10000">
-                        <div style="height: 300px">
-                          <img src="img/Picture 1.png-1.png">
-                        </div>
-                        <div class="carousel-caption d-none d-sm-block">
-                          <h5><b>{{featured_event_name}}</b></h5>
-                          <p>{{featured_event_desc}}</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item" data-bs-interval="2000">
-                        <div style="height: 300px">
-                          <img src="img/Picture 1.png-2.png">
-                        </div>
-                        <div class="carousel-caption d-none d-sm-block">
-                          <h5><b>{{featured_event_name}}</b></h5>
-                          <p>{{featured_event_desc}}</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div style="height: 300px">
-                          <img src="img/Picture 1.png-4.png">
-                        </div>
-                        <div class="carousel-caption d-none d-sm-block">
-                          <h5><b>{{featured_event_name}}</b></h5>
-                          <p>{{featured_event_desc}}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-              
-                  <!-- NAV BAR 2 -->
-              
-                  <div>
-                    <nav class="navbar navbar-expand-sm navbar-dark">
-                      <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Popular events</a>
-                        <ul class="navbar-nav mb-lg-0">
-                          <li class="nav-item">
-                            <button class="btn me-2 btn-primary" type="submit">Load All Events</button>
-                          </li>
-                          <li class="nav-item">
-                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Select Category</button>
-                          </li>
-                        </ul>
-                      </div>
-                    </nav>
-                  </div>
-              
-                  <!-- CATEGORY OFFCANVAS -->
-              
-                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasDarkLabel">Categories</h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body" id="offcanvas">
-                      <ul>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/pop">Pop</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/rock">Rock</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/hiphop">Hip Hop</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/country">Country</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/indie">Indie</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/events/jazz">Jazz</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            </div>
+   <!-- CAROUSEL -->
+   
+   <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active" data-bs-interval="10000">
+         <div style="height: 300px">
+            <img src="img/Picture 1.png-1.png">
          </div>
-
-         <!-- EVENT CARDS -->
-
-         <div class="card-group">
-            <article class="col">
-               {% for event in events %}
-               <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
-                  <img class="card-img-top"
-                     src={{event.img_link1}} alt="event picture">
-                  <div class="card-body">
-                     <h5 class="card-title">{{event.name}}</h5>
-                     <p class="card-text">{{event.description}}</p>
-                  </div>
-                  <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
-               </div>
-               {% endfor %}
-            </article>
+         <div class="carousel-caption d-none d-sm-block">
+            <h5><b>{{featured_event_name}}</b></h5>
+            <p>{{featured_event_desc}}</p>
          </div>
-
+         </div>
+         <div class="carousel-item" data-bs-interval="2000">
+         <div style="height: 300px">
+            <img src="img/Picture 1.png-2.png">
+         </div>
+         <div class="carousel-caption d-none d-sm-block">
+            <h5><b>{{featured_event_name}}</b></h5>
+            <p>{{featured_event_desc}}</p>
+         </div>
+         </div>
+         <div class="carousel-item">
+         <div style="height: 300px">
+            <img src="img/Picture 1.png-4.png">
+         </div>
+         <div class="carousel-caption d-none d-sm-block">
+            <h5><b>{{featured_event_name}}</b></h5>
+            <p>{{featured_event_desc}}</p>
+         </div>
+         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+      </button>
+   </div>
+
+   <!-- NAV BAR 2 -->
+
+   <div>
+      <nav class="navbar navbar-expand-sm navbar-dark">
+         <div class="container-fluid">
+         <a class="navbar-brand" href="#">Popular events</a>
+         <ul class="navbar-nav mb-lg-0">
+            <li class="nav-item">
+               <button class="btn me-2 btn-primary" type="submit">Load All Events</button>
+            </li>
+            <li class="nav-item">
+               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Select Category</button>
+            </li>
+         </ul>
+         </div>
+      </nav>
+   </div>
+
+   <!-- CATEGORY OFFCANVAS -->
+
+   <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+         <h5 class="offcanvas-title" id="offcanvasDarkLabel">Categories</h5>
+         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="offcanvas">
+         <ul>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/pop">Pop</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/rock">Rock</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/hiphop">Hip Hop</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/country">Country</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/indie">Indie</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/events/jazz">Jazz</a>
+         </li>
+         </ul>
+      </div>
+   </div>
+</div>
+
+<!-- EVENT CARDS -->
+
+<div class="card-group">
+   <article class="col">
+      {% for event in events %}
+      <div id="card" class="card" style="width: 18rem; background-color: rgb(33, 33, 33)">
+         <img class="card-img-top"
+            src={{event.img_link1}} alt="event picture">
+         <div class="card-body">
+            <h5 class="card-title">{{event.name}}</h5>
+            <p class="card-text">{{event.description}}</p>
+         </div>
+         <div class="card-footer"><a href = "{{url_for('event.show', event_id=event.event_id)}}" class ="btn btn-danger"> View Details </a></div>
+      </div>
+      {% endfor %}
+   </article>
+</div>
+
 {% endblock %}
