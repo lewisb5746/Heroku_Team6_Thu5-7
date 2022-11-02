@@ -53,12 +53,19 @@ h5 b {
   opacity: 0.5;
 }
 #card img {
-  width: 265px;
-  height: auto;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
 }
 #eventpage img {
-  display: block;
   width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+#create_img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
 }
 
 #events {

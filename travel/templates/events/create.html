@@ -6,15 +6,15 @@
 
   <!-- EVENT IMAGE -->
 
-  <div style="height: 350px;">
-    <img src="">
-  </div>
+    <div style="height: 250px;">
+      <img src="/static/image/event.png" id="create_img">
+    </div>
 
   <!-- DESCRIPTION -->
 
   <div id="description">
 
-    <form method=post>
+    <form method="POST" enctype="multipart/form-data">
       {{ form.csrf_token() }}
       {{ wtf.render_hidden_errors(form) }}
 
@@ -32,6 +32,7 @@
             <h5><b>Event Image:</b></h5>
             <div class="input-group">
               <!-- <p>{{wtf.render_field(form.image)}}</p> -->
+              <p>{{wtf.render_field(form.image)}}</p>
             </div>
           </div>
         </div>
