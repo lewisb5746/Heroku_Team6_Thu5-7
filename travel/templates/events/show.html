@@ -4,42 +4,36 @@
 
 {% block content %}
 
-<div class="container">  
-    <div class="row mt-5 mb-3">  
-      <div class="col-md-12">  
-        <div class="float-left">  
-          <h1 class="mb-0">{{event.name}}</h1>  
-          <p>Popular Events</p>  
-        </div>  
- 
-        <div class="float-right text-right"> 
-        </div>  
-      </div>  
-    </div>  
- 
+<div class="container">
     <!-- Event --> 
-    <div class="row">  
-      <div class="col-md-12">  
-        <div class="card my-3">  
-          <div class="card-body">  
-            <div class="media">  
-              <img class="align-self-start mr-3" src="{{event.image}}">  
+    <div class="row">
+      <div class="col-md-2"></div>   
+      <div class="col-md-8">
+        <div class="card text-center">
+        <div class="card my-3">
+            <div id="card" class="card" style="width: 53.2rem; background-color: rgb(33, 33, 33)">
               <div class="media-body">  
-                <small class="font-weight-bold text-muted">Get rowdy</small>  
-                <h5 class="mt-0">{{event.name}}</h5>  
-                <p>{{event.description}}</p>  
+                <img class="card-img-top"
+                   src={{event.img_link1}} alt="event picture" id="create_img" style="width: 50rem; background-color: rgb(33, 33, 33)">
+                   <br>
+                <h5 class="mt-0" style="color:whitesmoke; font-size: 30px;">{{event.name}}</h5> 
+                <br> 
+                <h5 class="mt-0" style="color:whitesmoke; font-size: 18px;">{{event.description}}</h5>
+                <br>
                 <a href="#" class="btn btn-danger">Book Now</a>  
               </div>  
             </div>  
           </div>  
-        </div>  
-      </div>  
+        </div> 
+      </div>   
+      </div> 
+      <div class="col-md-2"></div>    
     </div>     
  
    
  
     <hr>  
- 
+ <br>
     <!-- Comments -->  
     <div class="row">  
       <div class="col-md-12">  
