@@ -2,12 +2,15 @@ from flask import Blueprint, render_template, redirect, url_for, flash
 from .forms import LoginForm, RegisterForm
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_manager
+
 
 from . import db
 
 # a blueprint to manage authentication
 bp = Blueprint('auth',__name__)
+
+
 
 
 @bp.route('/register', methods = ['GET', 'POST'])  
