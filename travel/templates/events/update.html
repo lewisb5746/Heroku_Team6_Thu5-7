@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% import "bootstrap/form.html" as wtf %}
+{% block content %}
+<div id="eventpage">
+
+  <!-- EVENT IMAGE -->
+
+    <div style="height: 250px;">
+      <img src="/static/image/event.png" id="create_img">
+    </div>
+
+  <!-- DESCRIPTION -->
+
+  <div id="description">
+
+    <form method="POST" enctype="multipart/form-data">
+      {{ form.csrf_token() }}
+      {{ wtf.render_hidden_errors(form) }}
+
+      <div id="card">
+        <div id="create" class="row justify-content-sm-center">
+          <div class="col">
+            <h5><b>Tickets:</b></h5>
+            <p>{{wtf.render_field(form.num_tickets, value=event.num_tickets)}}</p>
+          </div> 
+          <div class="col">
+            <h5><b>Event name:</b></h5>
+            <p>{{wtf.render_field(form.name, value=event.name)}}</p>
+          </div>
+          <div class="col">
+            <h5><b>Event Image:</b></h5>
+            <div class="input-group">
+              <!-- <p>{{wtf.render_field(form.image)}}</p> -->
+              <p>{{wtf.render_field(form.image, value=event.image)}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center" id="create">
+          <div class="col">
+            <h5><b>Event Date Time (yyyy-mm-dd HH:MM):</b></h5>
+            <p>{{wtf.render_field(form.eventDateTime, value=event.event_date_time)}}</p>
+          </div>
+          <div class="col">
+            <h5><b>Venue:</b></h5>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Select
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Brisbane City Convention Center</a></li>
+                <li><a class="dropdown-item" href="#">The Fortitude</a></li>
+                <li><a class="dropdown-item" href="#">Riverstage</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <h5><b>Genre/s:</b></h5>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Select
+              </button>
+              
+            </div>
+          </div>
+          <div class="col">
+            <h5><b>Musician/s Playing:</b></h5>
+            <p>{{wtf.render_field(form.artist, value=artist_obj.name)}}</p>
+          </div>
+        </div>
+        <div class="row" id="create">
+          <div class="col">
+            <h5><b>Description of event:</b></h5>
+            <p>{{wtf.render_field(form.description, value=event.description)}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-sm-center" id="create">
+          <div class="col">
+            <div id="save">
+              <p>{{wtf.render_field(form.submit)}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+{% endblock %}

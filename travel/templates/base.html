@@ -37,7 +37,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
                      <li><a class="dropdown-item" href="/events/create">Create Events</a></li>
-                     <li><a class="dropdown-item" href="/events/create">Update Events</a></li>
+                     <li><a class="dropdown-item" href="{{url_for('main.update', user_id=current_user.id)}}">Update Events</a></li>
                      <li><a class="dropdown-item" href="/events/create">My Bookings</a></li>
                   </ul>
                   </li>

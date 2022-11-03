@@ -1,6 +1,6 @@
 from locale import currency
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Event, Comment
+from .models import Event, Comment, User, Artist
 from datetime import datetime
 from .forms import EventForm, CommentForm
 from . import db
@@ -14,9 +14,10 @@ bp = Blueprint('event', __name__, url_prefix='/events')
 @bp.route('/<event_id>')
 def show(event_id):
     event = Event.query.filter_by(event_id=event_id).first()
+    user = User.query.filter_by(id=event.created_by).first()
     # create the comment form
     cform = CommentForm()    
-    return render_template('events/show.html', event=event, form=cform)
+    return render_template('events/show.html', event=event, user=user, form=cform)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 def create():
@@ -36,7 +37,14 @@ def create():
     #Always end with redirect when form is valid
     return redirect(url_for('event.create'))
   return render_template('events/create.html', form=form)
-  
+
+@bp.route('/update/<event_id>', methods = ['GET', 'POST'])
+def update(event_id):
+  print('Method type: ', request.method)
+  event = Event.query.filter_by(event_id=event_id).first()
+  artist = Artist.query.filter_by(artist_id=event.artist_id).first()
+  form = EventForm()
+  return render_template('events/update.html', event=event, artist_obj=artist, form=form)  
 
 def check_upload_file(form):
   #get file data from form  

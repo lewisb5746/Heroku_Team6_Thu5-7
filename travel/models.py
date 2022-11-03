@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     tickets_sold = db.relationship('Sale', backref='user')
 
     def __repr__(self): #string print method
-        return "<Name: {}>".format(self.name)
+        return "<Email: {}>".format(self.email)
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
