@@ -83,12 +83,12 @@ lewisb5746 (54):
       Initial commit
       initial commit
       not sure
-      accidnetal change
+      accidental change
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       Just testing minor updates
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       Added times to comments and create functionality
-      nothing im;ortant
+      nothing important
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       nothing
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
@@ -99,18 +99,18 @@ lewisb5746 (54):
       fixed models
       minor forms fixes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
-      changes
+      Minor changes
       minor chnages
       nothing
       All changes from last week
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
-      bjk
+      Edited create page html
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       small changes
-      bger
+      Minor html changes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       change datetime
-      removed bs
+      Minor changes
       comments working
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       Changed events
@@ -122,11 +122,11 @@ lewisb5746 (54):
       style changes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       create page functionality
-      shit
+      Minor changes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
       small chanegs
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
-      ji
+      Minor changes
       procfile and requirements
       fixed landing page
       landing page edits
