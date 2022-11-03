@@ -6,15 +6,15 @@
 
 <div class="container">
     <!-- Event --> 
+    <br><br>
     <div class="row">
       <div class="col-md-2"></div>   
       <div class="col-md-8">
         <div class="card text-center">
-        <div class="card my-3">
-            <div id="card" class="card" style="width: 53.2rem; background-color: rgb(33, 33, 33)">
+            <div id="card" class="card" style="width: 53.36rem; background-color: rgb(33, 33, 33)">
               <div class="media-body">  
                 <img class="card-img-top"
-                   src={{event.img_link1}} alt="event picture" id="create_img" style="width: 50rem; background-color: rgb(33, 33, 33)">
+                   src={{event.img_link1}} alt="event picture" id="create_img" style="width: 50rem; height:105px; background-color: rgb(33, 33, 33)">
                    <br>
                 <h5 class="mt-0" style="color:whitesmoke; font-size: 30px;">{{event.name}}</h5> 
                 <br> 
@@ -31,23 +31,23 @@
     </div>     
  
    
- 
-    <hr>  
  <br>
+    <hr>  
+
     <!-- Comments -->  
     <div class="row">  
-      <div class="col-md-12">  
+      <div class="col-md-2"></div>   
+      <div class="col-md-8"> 
         <h2>Comments</h1>  
-      </div>  
-    </div>  
+        
  
-    <div class="row border-bottom"> 
       {{wtf.render_form(form,"/events/{0}/comment".format(event.event_id))}}
       {% for comment in event.comments %}
-      <div class="col-md-12">
         <b>{{comment.user}} <span class="ml-2 text-muted">{{comment.comment_date}}</span></b>
         <p>{{comment.comment_text}}</p>  
-      </div> 
+      </div>
+      <div class="col-md-2"></div>   
+
       {% endfor %} 
     </div>  
   </div> 
