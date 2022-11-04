@@ -16,7 +16,7 @@ def update(user_id):
   print('Method type: ', request.method)
   user = User.query.filter_by(id=user_id).first()
   events = Event.query.filter_by(created_by=user_id).all()
-  return render_template('events/my_events.html', user=user, events=events)
+  return render_template('events/my_events.html', user=current_user, events=events)
 
 @mainbp.route('/search')
 def search():
