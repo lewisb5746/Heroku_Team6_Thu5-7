@@ -41,8 +41,8 @@ class Event(db.Model):
     #genre = db.Column(db.string(15), nullable=True)
     description = db.Column(db.String, nullable=True)
     artist_id = db.Column(db.Numeric(10), db.ForeignKey('Artist.artist_id'))
-    num_tickets = db.Column(db.Numeric(4))
-    num_tickets_sold = db.Column(db.Numeric(4))
+    num_tickets = db.Column(db.Numeric(4,0))
+    num_tickets_sold = db.Column(db.Numeric(4,0))
     img_link1 = db.Column(db.String(100), nullable=True)
 
 
