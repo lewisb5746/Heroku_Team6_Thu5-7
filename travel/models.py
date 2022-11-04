@@ -17,12 +17,12 @@ class User(db.Model, UserMixin):
     tickets_sold = db.relationship('Sale', backref='user')
 
     def __repr__(self): #string print method
-        return "<Name: {}>".format(self.name)
+        return "<Email: {}>".format(self.email)
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
     artist_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), index=True, unique=True, nullable=False)
+    name = db.Column(db.String(30), index=True, nullable=False)
     genre = db.Column(db.String(15), nullable=True)
     description = db.Column(db.String, nullable=True)
     img_link_artist_profile = db.Column(db.String(100), nullable=True)
@@ -35,14 +35,14 @@ class Artist(db.Model):
 class Event(db.Model):
     __tablename__ = 'Event'
     event_id = db.Column(db.Integer, primary_key=True)
-    created_by = db.Column(db.String,nullable=False)
-    name = db.Column(db.String(30), index=True, unique=True, nullable=False)
+    created_by = db.Column(db.Integer,nullable=False)
+    name = db.Column(db.String(30), index=True, nullable=False)
     event_date_time = db.Column(db.DateTime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.Column(db.String, nullable=True)
     artist_id = db.Column(db.Numeric(10), db.ForeignKey('Artist.artist_id'))
-    num_tickets = db.Column(db.Numeric(4))
-    num_tickets_sold = db.Column(db.Numeric(4))
+    num_tickets = db.Column(db.Numeric(4,0))
+    num_tickets_sold = db.Column(db.Numeric(4,0))
     img_link1 = db.Column(db.String(100), nullable=True)
 
 

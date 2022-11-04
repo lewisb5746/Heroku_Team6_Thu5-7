@@ -1,6 +1,6 @@
 from locale import currency
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Event, Comment, User
+from .models import Event, Comment, User, Artist
 from datetime import datetime
 from .forms import EventForm, CommentForm
 from . import db
@@ -14,9 +14,10 @@ bp = Blueprint('event', __name__, url_prefix='/events')
 @bp.route('/<event_id>')
 def show(event_id):
     event = Event.query.filter_by(event_id=event_id).first()
+    user = User.query.filter_by(id=event.created_by).first()
     # create the comment form
     cform = CommentForm()    
-    return render_template('events/show.html', event=event, form=cform)
+    return render_template('events/show.html', event=event, user=user, form=cform)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required 
@@ -29,7 +30,7 @@ def create():
     db_file_path= check_upload_file(form)
     created_by1=current_user.get_id()
     event=Event(name=form.name.data,description=form.description.data, 
-    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=datetime.now(),created_by=created_by1)
+    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=datetime.now(),created_by=current_user.id)
     # add the object to the db session
     db.session.add(event)
     # commit to the database
@@ -37,7 +38,7 @@ def create():
     print('Successfully created new event', 'success')
     #Always end with redirect when form is valid
     return redirect(url_for('event.create'))
-  return render_template('events/create.html', form=form, user=current_user)
+  return render_template('events/create.html', form=form)
   
 
 def check_upload_file(form):

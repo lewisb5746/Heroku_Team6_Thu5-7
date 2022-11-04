@@ -1,0 +1,137 @@
+CaelanBurton (32):
+      Database
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Database
+      Commit
+      Database
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Update Destinations to Event
+      Update Name
+      Update Name
+      Updated Forms.py
+      Update
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Update Views
+      Commit
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      DB Edit
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      hi
+      Fix db
+      yes
+      yes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      test
+      Setup Login
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Git Ignore
+      yes
+      yes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      update
+      Login fixes
+      added created user to events
+
+Finn Seccombe (36):
+      it
+      Merge branch 'main' of https://github.com/lewisb5746/Hgiteroku_Team6_Thu5-7
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      commit
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      oij
+      oaijn
+      oaiejf
+      afc
+      .kln
+      kn;
+      lk
+      asef
+      ajebn
+      asf
+      aef
+      eac
+      hij
+      lkqnc
+      kjn#
+      .k
+      <none>
+      oij
+      ojn
+      oi
+      ljn
+      k lk
+      ino
+      jun
+      kj
+      nav
+      pushing
+      Pulling
+      event page
+      Event Detailss
+
+HaRRy21222 (7):
+      initial commit
+      initial commit
+      initial commit
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      Login Setup
+      yes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+
+lewisb5746 (54):
+      Initial commit
+      initial commit
+      not sure
+      accidental change
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Just testing minor updates
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Added times to comments and create functionality
+      nothing important
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      nothing
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      changed instances of 'destination' to 'event'
+      html changes from destination to event
+      changes from camel case to underscores
+      small changes
+      fixed models
+      minor forms fixes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Minor changes
+      minor chnages
+      nothing
+      All changes from last week
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Edited create page html
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      small changes
+      Minor html changes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      change datetime
+      Minor changes
+      comments working
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Changed events
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      main page working now
+      events fix
+      login register
+      My wireframes
+      style changes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      create page functionality
+      Minor changes
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      small chanegs
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7 into main
+      Minor changes
+      procfile and requirements
+      fixed landing page
+      landing page edits
+      changed footer
+      fixed carousel
+      work on landing/create pages
+      major changes, added update events
+
