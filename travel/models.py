@@ -22,7 +22,7 @@ class User(db.Model, UserMixin):
 class Artist(db.Model):
     __tablename__ = 'Artist'
     artist_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), index=True, unique=True, nullable=False)
+    name = db.Column(db.String(30), index=True, nullable=False)
     genre = db.Column(db.String(15), nullable=True)
     description = db.Column(db.String, nullable=True)
     img_link_artist_profile = db.Column(db.String(100), nullable=True)
@@ -36,7 +36,7 @@ class Event(db.Model):
     __tablename__ = 'Event'
     event_id = db.Column(db.Integer, primary_key=True)
     created_by = db.Column(db.Integer,nullable=False)
-    name = db.Column(db.String(30), index=True, unique=True, nullable=False)
+    name = db.Column(db.String(30), index=True, nullable=False)
     event_date_time = db.Column(db.DateTime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)
     description = db.Column(db.String, nullable=True)
