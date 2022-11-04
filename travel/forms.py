@@ -16,7 +16,7 @@ def VaildEmail(self, field):
 class EventForm(FlaskForm):
   name = StringField('', validators=[InputRequired()])
   #eventDateTime = StringField('Event Date Time', validators=[InputRequired()])
-  eventDateTime = DateTimeField('', validators=[InputRequired()], format='%Y-%m-%d %H:%M')
+  eventDateTime = DateTimeField('', validators=[InputRequired()], format='%Y-%m-%d %H:%M:%S')
   description = TextAreaField('', validators=[InputRequired()])
   artist = StringField('', validators=[InputRequired()])
   num_tickets = IntegerField('', validators=[InputRequired()])
