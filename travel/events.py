@@ -38,7 +38,7 @@ def create():
     print('Successfully created new event', 'success')
     #Always end with redirect when form is valid
     return redirect(url_for('event.create'))
-  return render_template('events/create.html', form=form)
+  return render_template('events/create.html', form=form, user=current_user)
   
 
 def check_upload_file(form):

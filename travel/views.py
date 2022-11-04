@@ -8,7 +8,7 @@ mainbp = Blueprint('main', __name__)
 @mainbp.route('/')
 def index():
     events = Event.query.all()
-    user = User.query.first()f
+    user = User.query.first()
     return render_template('index.html', events=events, user=current_user)
 
 @mainbp.route('/update/<user_id>', methods = ['GET', 'POST'])
