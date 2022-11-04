@@ -35,7 +35,7 @@ class Artist(db.Model):
 class Event(db.Model):
     __tablename__ = 'Event'
     event_id = db.Column(db.Integer, primary_key=True)
-    created_by = db.Column(db.Integer,nullable=False)
+    created_by = db.Column(db.String,nullable=False)
     name = db.Column(db.String(30), index=True, unique=True, nullable=False)
     event_date_time = db.Column(db.DateTime, nullable=False)
     #genre = db.Column(db.string(15), nullable=True)

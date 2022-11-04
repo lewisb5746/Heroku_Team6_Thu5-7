@@ -2,8 +2,8 @@ from flask import Blueprint, render_template, redirect, url_for, flash
 from .forms import LoginForm, RegisterForm
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user, login_manager
-
+from flask_login import login_user, logout_user, login_required, current_user
+from flask import g
 
 from . import db
 
@@ -43,8 +43,8 @@ def register():
       flash("Registered user successfully")
       return redirect(url_for('auth.register'))
        
-    return render_template('user.html', form=form, heading='Register')
-    #return render_template('user.html', form=form)
+    return render_template('user.html', form=form, heading='Register', user=current_user)
+    
 
 
 @bp.route('/login', methods = ['GET', 'POST'])
@@ -64,19 +64,23 @@ def login():
       error='Incorrect password'
     if error is None:
     #all good, set the login_user
-      login_user(u1)
+      login_user(u1, remember=True)
+      print("loged in")
       return redirect(url_for('main.index'))
     else:
       print(error)
       flash(error)
     #it comes here when it is a get method
-  return render_template('user.html', form=form, heading='Login')
+  return render_template("user.html", form=form, heading='Login', user=current_user)
 
 
 @bp.route('/logout')
+@login_required
 def logout():
   logout_user()
-  return 'Successfully logged out user'
+  
+  return redirect(url_for("auth.login")), 'Successfully logged out user' 
+  
 
 
 
