@@ -70,9 +70,8 @@
         
       {% if user.is_authenticated %}
         {{wtf.render_form(form,"/events/{0}/comment".format(event.event_id))}}
-        <h2>yes</h2>
       {% else %}
-          <a href="">Login to comment</a>
+          <a href="/login">Login to comment</a>
       {% endif %}
 
       {% for comment in event.comments %}
