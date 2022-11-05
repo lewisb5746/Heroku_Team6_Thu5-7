@@ -14,7 +14,6 @@ bp = Blueprint('event', __name__, url_prefix='/events')
 @bp.route('/<event_id>')
 def show(event_id):
     event = Event.query.filter_by(event_id=event_id).first()
-    user = User.query.filter_by(id=event.created_by).first()
     # create the comment form
     cform = CommentForm()    
     return render_template('events/show.html', event=event, user=current_user, form=cform)
@@ -39,7 +38,30 @@ def create():
     #Always end with redirect when form is valid
     return redirect(url_for('event.create'))
   return render_template('events/create.html', form=form, user=current_user)
-  
+
+
+@bp.route('/update/<event_id>', methods = ['GET', 'POST'])
+def update(event_id):
+  print('Method type: ', request.method)
+  event = Event.query.filter_by(event_id=event_id).first()
+  prev_event = event
+  artist = Artist.query.filter_by(artist_id=event.artist_id).first()
+  form = EventForm()
+  if form.validate_on_submit():
+    #call the function that checks and returns image
+    #db_file_path= '/static/image/event.png'
+    db_file_path= check_upload_file(form)
+    event=Event(name=form.name.data,description=form.description.data, 
+    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=form.eventDateTime.data,created_by=current_user.id)
+    # add the object to the db session
+    db.session.delete(prev_event)
+    db.session.add(event)
+    # commit to the database
+    db.session.commit()
+    print('Successfully created new event', 'success')
+    #Always end with redirect when form is valid
+    return redirect(url_for('event.create'))
+  return render_template('events/update.html', event=event, artist_obj=artist, form=form, user=current_user)
 
 def check_upload_file(form):
   #get file data from form  
