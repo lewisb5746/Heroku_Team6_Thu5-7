@@ -64,7 +64,7 @@ def login():
       error='Incorrect password'
     if error is None:
     #all good, set the login_user
-      login_user(u1, remember=True)
+      login_user(u1)
       print("loged in")
       return redirect(url_for('main.index'))
     else:
@@ -75,37 +75,10 @@ def login():
 
 
 @bp.route('/logout')
-@login_required
 def logout():
   logout_user()
   
   return redirect(url_for("auth.login")), 'Successfully logged out user' 
-  
 
 
 
-
-""" from flask import Blueprint, render_template, request,redirect,url_for,flash
-from .forms import LoginForm, RegisterForm
-
-#create a blueprint
-bp = Blueprint('auth', __name__ )
-
-@bp.route('/login', methods=['GET','POST'])
-def login():
-    loginForm = LoginForm()
-    if loginForm.validate_on_submit():
-        # Get actual functionality sorted
-        print('Successfully logged in')
-        flash('You logged in successfully')
-        return redirect(url_for('auth.login'))
-    return render_template('user.html', form=loginForm,  heading='Login')
-
-@bp.route('/register', methods=['GET','POST'])
-def register():
-    form = RegisterForm()
-    if form.validate_on_submit():
-        # Get actual functionality sorted
-        print('Successfully registered')
-        return redirect(url_for('auth.login'))
-    return render_template('user.html', form=form) """

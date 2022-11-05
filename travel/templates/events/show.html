@@ -68,8 +68,13 @@
       <div class="col-md-8"> 
         <h2>Comments</h1>  
         
- 
-      {{wtf.render_form(form,"/events/{0}/comment".format(event.event_id))}}
+      {% if user.is_authenticated %}
+        {{wtf.render_form(form,"/events/{0}/comment".format(event.event_id))}}
+        <h2>yes</h2>
+      {% else %}
+          <a href="">Login to comment</a>
+      {% endif %}
+
       {% for comment in event.comments %}
         <b>{{comment.user}} <span class="ml-2 text-muted">{{comment.comment_date}}</span></b>
         <p>{{comment.comment_text}}</p>  

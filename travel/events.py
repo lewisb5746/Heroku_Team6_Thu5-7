@@ -17,7 +17,7 @@ def show(event_id):
     user = User.query.filter_by(id=event.created_by).first()
     # create the comment form
     cform = CommentForm()    
-    return render_template('events/show.html', event=event, user=user, form=cform)
+    return render_template('events/show.html', event=event, user=current_user, form=cform)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required 
