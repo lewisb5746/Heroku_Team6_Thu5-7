@@ -2,7 +2,7 @@ from flask import Flask, render_template, abort
 from flask_bootstrap import Bootstrap4
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from . import error_handels
+
 
 
 db=SQLAlchemy()
