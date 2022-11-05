@@ -1,4 +1,4 @@
-CaelanBurton (32):
+Caelan Burton (40):
       Database
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       Database
@@ -16,59 +16,65 @@ CaelanBurton (32):
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       DB Edit
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
-      hi
+      Minor updates
       Fix db
-      yes
-      yes
+      Minor updates
+      Setup fixes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       test
-      Setup Login
+      Setup register
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       Git Ignore
-      yes
-      yes
+      Register fixes
+      Login fixes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       update
       Login fixes
       added created user to events
+      Minor Fixes
+      Changes
+      Authentication added 
+      Authentication fixes 
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
+      update
+      Logout redirect fix
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
 
 Finn Seccombe (36):
       it
-      Merge branch 'main' of https://github.com/lewisb5746/Hgiteroku_Team6_Thu5-7
+      Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
       commit
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
-      oij
-      oaijn
-      oaiejf
-      afc
-      .kln
-      kn;
-      lk
-      asef
-      ajebn
-      asf
-      aef
-      eac
-      hij
-      lkqnc
-      kjn#
-      .k
-      <none>
-      oij
-      ojn
-      oi
-      ljn
-      k lk
-      ino
-      jun
-      kj
-      nav
+      Touch up
+      Html adjustments
+      Create event details page
+      Updates
+      pushing
+      Setup login html
+      Login update
+      Event details comments
+      Updates
+      Updates
+      push
+      Comments cleaned up
+      Push for event in database
+      Push for registered account
+      Event details html
+      Css styling
+      Landing page touch up
+      Updates
+      Card styling
+      Modal attempts      
+      Modal fix
+      Small changes
+      Minor touch upsj
+      Navbar fixed
       pushing
       Pulling
       event page
-      Event Detailss
+      Event Details
 
 HaRRy21222 (7):
       initial commit
@@ -79,7 +85,7 @@ HaRRy21222 (7):
       yes
       Merge branch 'main' of https://github.com/lewisb5746/Heroku_Team6_Thu5-7
 
-lewisb5746 (54):
+lewisb5746 (56):
       Initial commit
       initial commit
       not sure
@@ -134,4 +140,5 @@ lewisb5746 (54):
       fixed carousel
       work on landing/create pages
       major changes, added update events
-
+      Finalising create/update pages
+      Finalising html
