@@ -19,6 +19,10 @@ body {
 .nav-item {
   display: inline-block;
 }
+.dropdown-menu a {
+  display: inline-block;
+}
+
 #offcanvas ul li {
   list-style: none;
   padding: 20px;
