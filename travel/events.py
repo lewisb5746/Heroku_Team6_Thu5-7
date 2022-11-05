@@ -7,6 +7,8 @@ from . import db
 import os
 from werkzeug.utils import secure_filename
 from flask_login import  current_user, login_required
+from flask import render_template, abort
+
 
 
 bp = Blueprint('event', __name__, url_prefix='/events')
@@ -29,7 +31,7 @@ def create():
     db_file_path= check_upload_file(form)
     created_by1=current_user.get_id()
     event=Event(name=form.name.data,description=form.description.data, 
-    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=datetime.now(),created_by=current_user.id)
+    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=form.eventDateTime.data,created_by=current_user.id)
     # add the object to the db session
     db.session.add(event)
     # commit to the database
@@ -85,7 +87,7 @@ def comment(event_id):
     if form.validate_on_submit():  
       #read the comment from the form
       comment = Comment(comment_text=form.text.data,  
-                        event_id=event_id)
+                        event_id=event_id,user_id=current_user.id)
       #here the back-referencing works - comment.event is set
       # and the link is created
       db.session.add(comment) 
@@ -96,4 +98,6 @@ def comment(event_id):
       print('Your comment has been added', 'success') 
     # using redirect sends a GET request to event.show
     return redirect(url_for('event.show', event_id=event_id))
+
+  
     

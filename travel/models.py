@@ -89,7 +89,7 @@ class Comment(db.Model):
     __tablename__ = 'Comment'
     comment_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('Event.event_id'))
-    id = db.Column(db.Integer, db.ForeignKey('User.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
     comment_date = db.Column(db.DateTime, nullable=False, default=datetime.now())
     comment_text = db.Column(db.String, nullable=False)
 
