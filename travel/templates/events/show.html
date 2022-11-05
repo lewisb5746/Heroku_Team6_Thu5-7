@@ -75,7 +75,7 @@
       {% endif %}
 
       {% for comment in event.comments %}
-        <b>{{comment.user}} <span class="ml-2 text-muted">{{comment.comment_date}}</span></b>
+        <b>{{comment.user.first_name}} <span class="ml-2 text-muted">{{comment.comment_date}}</span></b>
         <p>{{comment.comment_text}}</p>  
         
 
