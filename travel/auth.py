@@ -74,11 +74,10 @@ def login():
   return render_template("user.html", form=form, heading='Login', user=current_user)
 
 
-@bp.route('/logout')
+@bp.route('/logout/')
 def logout():
   logout_user()
   
-  return redirect(url_for("auth.login")), 'Successfully logged out user' 
-
+  return redirect(url_for("main.index"))
 
 
