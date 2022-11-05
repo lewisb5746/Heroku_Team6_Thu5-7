@@ -54,9 +54,14 @@ def update(event_id):
     #db_file_path= '/static/image/event.png'
     db_file_path= check_upload_file(form)
     event=Event(name=form.name.data,description=form.description.data, 
-    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=form.eventDateTime.data,created_by=current_user.id)
+    img_link1=db_file_path,num_tickets=form.num_tickets.data,event_date_time=form.eventDateTime.data,created_by=current_user.id,comments=prev_event.comments)
     # add the object to the db session
+    for comment in prev_event.comments:
+      db.session.delete(comment)
+
+    db.session.commit()
     db.session.delete(prev_event)
+    db.session.commit()
     db.session.add(event)
     # commit to the database
     db.session.commit()
@@ -91,7 +96,7 @@ def comment(event_id):
       #here the back-referencing works - comment.event is set
       # and the link is created
       db.session.add(comment) 
-      db.session.commit() 
+      db.session.commit()
 
       #flashing a message which needs to be handled by the html
       #flash('Your comment has been added', 'success')  
